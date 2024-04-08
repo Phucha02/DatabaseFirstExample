@@ -1,5 +1,3 @@
-using DatabaseFirstExample.Application.Services;
-using DatabaseFirstExample.Domain.DataContext;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,10 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-builder.Services.AddScoped<IStudentService, StudentServices>();
-builder.Services.AddScoped<IDepartmentService, DepartmentServices>();
-builder.Services.AddScoped<IGradeServices, GradeServices>();
+
 
 var app = builder.Build();
 
